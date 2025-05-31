@@ -28,9 +28,6 @@ main.home-main {
   gap: 50px 30px;
 }
 
-
-
-
 h2 {
   font-weight: bold;
   margin-bottom: 1rem;
@@ -60,10 +57,11 @@ h3 {
 .big {
   margin-bottom: 35px;
   position: relative;
+  width: 100%;
 }
 
 .big img {
-  width: 200px;
+  /* width: 200px; */
   height: 200px;
   object-fit: contain;
   border-radius: 5px;
@@ -103,24 +101,30 @@ h3 {
 }
 
 .add-to-cart-1 img {
-  border: 1px solid #fff;
+  border: 1px solid #5e5757;
   border-radius: 50%;
   padding: 0.3rem;
   cursor: pointer;
 }
 
+.box-image {
+  border: solid 2px transparent;
+  object-fit: fill;
+  border-radius: 8px;
+  overflow-x: hidden;
+  box-sizing: border-box;
+
+}
 
 .border-red {
   border: 2px solid red;
   border-radius: 8px;
+  /* box-sizing: border-box; */
 }
-
 
 .show-flex {
   display: flex !important;
 }
-
-
 
 .order-list-box {
   margin-top: 10px;
@@ -129,28 +133,49 @@ h3 {
   height: auto;
 }
 
+/* Section */
+.second-section {
+  width: 400px;
+}
+
+
 
 
 /* ====== Cart Styles ====== */
 .cart-box,
 .cart-box-filled {
   width: 100%;
-  max-width: 420px;
+  /* max-width: 420px; */
   background-color: white;
-  height: auto; /* Let content define the height */
+  height: auto; 
   padding: 1rem;
   border-radius: 7px;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
-
 
 .cart-box {
   height: 400px;
+  overflow-x: hidden;
 }
 
 .cart-box-filled {
-  height: 490px;
-  /* display: none; */
+  width: 100%;
+  /* max-width: 420px; */
+  background-color: white;
+  padding: 1rem;
+  border-radius: 7px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.orderLists,
+.orderList-item,
+.food-price,
+.modal-item {
+  flex-wrap: wrap;
+  min-width: 0;
 }
 
 .cart-box h3,
@@ -160,16 +185,6 @@ h3 {
   color: hsl(14, 86%, 42%);
 }
 
-/* .cart-box, .cart-box-filled {
-  border: 1px solid #ccc;
-  padding: 10px;
-  min-height: 200px; 
-  background: #f9f9f9;
-} */
-
-
-
-
 .cart-item {
   display: flex;
   flex-direction: column;
@@ -178,16 +193,25 @@ h3 {
   border-bottom: 1px solid #f2f2f2;
 }
 
+.order-list-box {
+  overflow-x: hidden;
+}
+
 .orderLists {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  overflow-x: hidden;
 }
 
 .orderList-item {
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.orderList-item img {
+  overflow-x: hidden;
 }
 
 .orderList-item p {
@@ -197,7 +221,6 @@ h3 {
 
 .items {
   display: flex;
-  /* justify-content: space-between; */
   font-size: 14px;
   gap: 50px;
   color: hsl(14, 25%, 72%);
@@ -326,12 +349,21 @@ h3 {
   cursor: pointer;
 }
 
-
 @media (max-width: 768px) {
   .productContainer {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     justify-content: center;
   }
+
+
+  .second-section {
+    width: 100%;
+  }
+
+  p,h4,h5 {
+    text-align: center;
+  }
+  
 }
 
 @media (max-width: 480px) {
@@ -349,9 +381,6 @@ h3 {
   }
 }
 
-
-
-
 /* MODAL */
 /* ====== Order Modal Styles ====== */
 .confirm-modal {
@@ -363,10 +392,9 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.3); 
-  z-index: 999; 
-  padding: 0 1rem; 
-
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  padding: 0 1rem;
 }
 
 /* .confirm-box {
@@ -396,10 +424,10 @@ h3 {
   margin-bottom: 10px;
 }
 
-.confirm-box p,h1 {
+.confirm-box p,
+h1 {
   padding-bottom: 10px;
 }
-
 
 .item-box-list {
   display: flex;
@@ -472,13 +500,11 @@ h3 {
   }
 }
 
-
-
 @media (max-width: 480px) {
   .confirm-box {
     width: 100%;
-    max-width: 100%; 
-    padding: 1rem; 
+    max-width: 100%;
+    padding: 1rem;
     box-sizing: border-box;
   }
 }

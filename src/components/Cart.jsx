@@ -1,9 +1,9 @@
 const Cart = ({
   products,
   quantities,
-  setQuantities,
-  onDecrement,
+
   onConfirm,
+  onCancle,
 }) => {
   const cartItems = products.filter((product) => quantities[product.id]);
 
@@ -51,7 +51,7 @@ const Cart = ({
                 alt="cancel"
                 className="canclebotton"
                 style={{ width: "20px", height: "20px", cursor: "pointer" }}
-                onClick={() => onDecrement(product.id)} 
+                onClick={() => onCancle(product.id)}
               />
             </div>
 

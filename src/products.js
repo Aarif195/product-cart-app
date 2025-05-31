@@ -7,7 +7,7 @@ export const products = [
     category: "waffle",
     image: "image-waffle-tablet.jpg",
     quantity: 1,
-    icon:"icon-remove-item.svg"
+    icon: "icon-remove-item.svg",
   },
   {
     id: 2,
@@ -54,7 +54,8 @@ export const products = [
     name: "Red Velvet Cake",
     price: 5.19,
     category: "Cake",
-    image: "image-cake-mobile.jpg",
+    // image: "image-cake-mobile.jpg",
+    image: "image-baklava-desktop.jpg",
     quantity: 1,
   },
   {

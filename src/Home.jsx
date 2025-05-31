@@ -10,10 +10,12 @@ const Home = () => {
   // Modal State
   const [isModalOpen, setIsModalOpen] = useState(false);
 
+  // CONFIRM ORDER
   const handleConfirmOrder = () => {
     setIsModalOpen(true);
   };
 
+  // NEW ORDER
   const handleStartNewOrder = () => {
     setQuantities({});
     setIsModalOpen(false);
@@ -24,13 +26,14 @@ const Home = () => {
     setQuantities((prev) => ({ ...prev, [id]: 1 }));
   };
 
-
   // Increasement and Decrement Function
   const handleIncrement = (id) => {
+    console.log(quantities);
     setQuantities((prev) => ({
       ...prev,
       [id]: (prev[id] || 0) + 1,
     }));
+    console.log(quantities);
   };
 
   const handleDecrement = (id) => {
@@ -46,6 +49,16 @@ const Home = () => {
           [id]: currentQty - 1,
         };
       }
+    });
+  };
+
+
+  // Cancle button
+  const handleCancel = (id) => {
+    setQuantities((prev) => {
+      const newQuantities = { ...prev };
+      delete newQuantities[id];
+      return newQuantities;
     });
   };
 
@@ -65,13 +78,14 @@ const Home = () => {
           </div>
         </section>
 
-        <section>
+        <section className="second-section">
           <Cart
             products={products}
             quantities={quantities}
             setQuantities={setQuantities}
             onDecrement={handleDecrement}
             onConfirm={handleConfirmOrder}
+            onCancle={handleCancel}
           />
         </section>
       </main>

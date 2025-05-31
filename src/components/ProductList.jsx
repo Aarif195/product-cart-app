@@ -19,7 +19,8 @@ const ProductList = ({
               <img
                 src={`/assets/images/${product.image}`}
                 alt={product.name}
-                className={isActive ? "border-red" : ""}
+                className={`${isActive ? "border-red" : ""} box-image`}
+                style={{ cursor: "pointer" }}
               />
 
               {!isActive && (
